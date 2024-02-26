@@ -1,4 +1,9 @@
 
+using Business.Abstracts;
+using Business.Concretes;
+using DataAccess.Abstracts;
+using DataAccess.Concretes;
+
 namespace WebApiControllerMain;
 
 public class Program
@@ -14,6 +19,10 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        builder.Services.AddSingleton<IBrandService, BrandManager>();
+        builder.Services.AddSingleton<IBrandDal, BrandDal>();
+
+        
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
