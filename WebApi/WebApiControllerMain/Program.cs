@@ -6,7 +6,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-
+        Console.WriteLine("Hello World");
         // Add services to the container.
 
         builder.Services.AddControllers();
